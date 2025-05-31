@@ -6262,3 +6262,39 @@ ConfigSection:Button({
 
 
 
+
+
+
+-- =============================
+-- === WORKING UI EXAMPLE ====
+-- =============================
+
+local Window = Library:Window({ Name = "My UI" })
+
+local MainPage = Window:Page({
+    Name = "Main",
+    Icon = "rbxassetid://7733960981" -- Replace with any icon ID you like
+})
+
+local Section = MainPage:Section({
+    Name = "Main Section",
+    Side = "left"
+})
+
+Section:Toggle({
+    Name = "Example Toggle",
+    Callback = function(state)
+        print("Toggle state:", state)
+    end
+})
+
+Section:Slider({
+    Name = "Volume",
+    Min = 0,
+    Max = 100,
+    Default = 50,
+    Suffix = "%",
+    Callback = function(value)
+        print("Slider value:", value)
+    end
+})
